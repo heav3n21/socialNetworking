@@ -15,11 +15,11 @@ const UserSchema = new Schema(
             unique: true,
             trim: true,
         },
-        // email:{
-        //     type: String,
-        //     required: false,
-        //     unique: true,
-        // },
+        email:{
+            type: String,
+            required: false,
+            unique: true,
+        },
     //     thoughts:[
     //     {
     //         type: Schema.Types.ObjectId,
