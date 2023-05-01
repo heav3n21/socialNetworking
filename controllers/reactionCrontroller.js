@@ -1,7 +1,7 @@
 const Reaction = require('../models/Reaction');
 const Thought = require('../models/Thought');
 
-
+//virtula pipeline will go here
 
 module.exports = {
     getReactions(req,res){
