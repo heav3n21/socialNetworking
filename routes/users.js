@@ -13,9 +13,10 @@ router.route('/').get(getUsers).post(createStudent)
 router.route('/:userId').get(getSingleUser).delete(deleteUser);
 //gets one user
 router.route('/user/:userId');
-
 //update a user
-router.route('/user/:userId').get(getSingleUser).put(updateUser)
+router.route('/user/:userId').get(getSingleUser).put(updateUser);
+
+
 
 
 

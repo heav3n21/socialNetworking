@@ -1,4 +1,5 @@
 const {Schema,model} = require('mongoose');
+const Thoughts = require('./Thought')
 
 // const { User } = require('./');
 // const assigmentSchema = require('./')
@@ -20,12 +21,12 @@ const UserSchema = new Schema(
             required: false,
             unique: true,
         },
-    //     thoughts:[
-    //     {
-    //         type: Schema.Types.ObjectId,
-    //         ref: 'Thought',
-    //     }    
-    //     ],
+        thoughts:[
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Thought',
+        }    
+        ],
     //     friends:[
     //         {
     //             type: Schema.Types.ObjectId,

@@ -20,8 +20,8 @@ router.route('/').post(createThought)
 router.route('/:thoughtId').get(getThoughts).put(updateThought)
 // delete a thought
 router.route('/:thoughtId').delete(deleteThought)
-
-
+// user posts a thought
+router.route('/:userId/thought').get(getThoughts).post(createThought)
 
 
 
