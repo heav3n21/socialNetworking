@@ -1,11 +1,12 @@
-const { ObjectId } = require('mongoose').Types
+// const { ObjectId } = require('mongoose').Types
 const Users = require('../models/User');
-const Thought = require('../models/Thought');
+
 
     module.exports = {
         // Get all students
         getUsers(req, res) {
           Users.find()
+          .populate('thoughts')
             .then(async (users) => {
               const userObj = {
                 users,
@@ -27,6 +28,7 @@ const Thought = require('../models/Thought');
           getSingleUser(req, res) {
             console.log(req.params.userId)
             Users.findOne({ _id: req.params.userId })
+            .populate('thoughts')
               .then((user)=>{
                 res.json({ user })
             })

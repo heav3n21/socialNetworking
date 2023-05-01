@@ -8,6 +8,7 @@ module.exports = {
 
     getThoughts(req,res){
         Thoughts.find()
+        .populate('reactions')
         .then(async(thought)=>{
             const thoughtObj = {
                 thought,
@@ -17,7 +18,11 @@ module.exports = {
         .catch((err)=> res.status(500).json(err))
     },
     createThought(req, res) {
-            Thoughts.create(req.body)
+        
+        const {thoughtText, username} = req.body
+        // username = username.toString();
+        
+            Thoughts.create({thoughtText,username})
               .then(async (thought) => {
                 console.log(req.params.userId);
                 return  await User.findOneAndUpdate(
@@ -44,7 +49,7 @@ module.exports = {
         
             Thoughts.findOneAndUpdate(
                 { _id: req.params.thoughtId},
-                { $set: req.body },
+               { $set: req.body },
                 {  new: true },
             )
             .then((thought)=>{

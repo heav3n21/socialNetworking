@@ -16,17 +16,21 @@ const schemaReaction = new Schema(
             // check string if its inbetween 1-280
 
         },
-        username: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: 'User'
-            }
-        ],
+        // username: [
+        //     {
+        //         type: Schema.Types.ObjectId,
+        //         ref: 'user'
+        //     }
+        // ],
         createdAt: {
             type: Date,
             default: Date.now()
 
         },
+        thought:{
+            type: Schema.Types.ObjectId,
+            ref:'thought'
+        }
         
     },
     {
